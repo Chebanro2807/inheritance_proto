@@ -6,12 +6,14 @@ Organism.prototype.isAlive = function (){
 
 function Creature() {}
 Creature.prototype = Object.create( Organism.prototype );
+Creature.prototype.constructor = Creature;
 Creature.prototype.getAge = function() {
     return this.age;
 }
 
 function Person() {}
 Person.prototype = Object.create( Creature.prototype );
+Person.prototype.constructor = Person;
 Person.prototype.sayHi = function() {
     return `Hello, ${this.name}`;
 }
@@ -23,6 +25,7 @@ function Boy( name, age ) {
 }
 
 Boy.prototype = Object.create( Person.prototype );
+Boy.prototype.constructor = Boy;
 Boy.prototype.getFavoriteColor = function () {
     return this.color;
 };
@@ -34,6 +37,7 @@ function Girl( name, age ) {
 }
 
 Girl.prototype = Object.create( Person.prototype );
+Girl.prototype.constructor = Girl;
 Girl.prototype.getFavoriteColor = function () {
     return this.color;
 };
