@@ -1,15 +1,15 @@
 import Person from './person'
 
-function Girl( name, age ) {
-    this.name = name;
-    this.age = age;
-    this.color = 'red';
+class Girl extends Person {
+    constructor(name, age, color) {
+        super();
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+    getFavoriteColor() {
+        return this.color;
+    }
 }
-
-Girl.prototype = Object.create( Person.prototype );
-Girl.prototype.constructor = Girl;
-Girl.prototype.getFavoriteColor = function () {
-    return this.color;
-};
 
 export default Girl

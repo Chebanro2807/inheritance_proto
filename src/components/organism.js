@@ -1,6 +1,7 @@
-function Organism() {}
-Organism.prototype.isAlive = function (){
-    return (this.age > 110)
+class Organism {
+    isAlive() {
+        return this.age <= 110 ? true : false;
+    }
 }
 
 export default Organism
